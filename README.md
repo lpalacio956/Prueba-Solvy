@@ -26,74 +26,90 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+Documentación del Proyecto
 
-```bash
-$ npm install
-```
+Backend - Nest.js con PostgreSQL y Prisma
 
-## Compile and run the project
+1. Instalación y Configuración
 
-```bash
-# development
-$ npm run start
+Requisitos previos
 
-# watch mode
-$ npm run start:dev
+Node.js (versión recomendada: LTS)
 
-# production mode
-$ npm run start:prod
-```
+PostgreSQL instalado y en ejecución
 
-## Run tests
+Prisma CLI instalado globalmente (npm install -g prisma)
 
-```bash
-# unit tests
-$ npm run test
+Pasos de instalación
 
-# e2e tests
-$ npm run test:e2e
+Clonar el repositorio:
 
-# test coverage
-$ npm run test:cov
-```
+git clone https://github.com/lpalacio956/Prueba-Solvy-Backend
 
-## Deployment
+Instalar dependencias:
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+npm install
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Configurar el entorno:
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+Crear un archivo .env basado en .env.example con la configuración de la base de datos:
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+DATABASE_URL="postgresql://postgres:sachi@localhost:5432/nestdba?schema=public"
 
-## Resources
+Configurar Prisma:
 
-Check out a few resources that may come in handy when working with NestJS:
+npx prisma migrate dev --name init
+npx prisma generate
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Ejecutar el servidor:
 
-## Support
+npm run start
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+2. Endpoints principales
 
-## Stay in touch
+Método
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Endpoint
 
-## License
+Descripción
+
+GET
+
+/productos
+
+Obtener todos los productos
+
+GET
+
+/productos/:id
+
+Obtener un producto por ID
+
+POST
+
+/productos
+
+Crear un nuevo producto
+
+PUT
+
+/productos/:id
+
+Actualizar un producto
+
+DELETE
+
+/productos/:id
+
+Eliminar un producto
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+Se pueden visualizar los metodos mediante Swagger 
+
+
+![image](https://github.com/user-attachments/assets/d8e2bc06-3b96-4968-be9a-42eaff71b4b2)
+
+
+
+
